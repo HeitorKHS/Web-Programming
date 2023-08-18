@@ -2,16 +2,20 @@
 
 session_start();
 
-function calculatorNumber($percentage, $parcel, $financedAmount)
+function calculatorParcel($percentage, $parcel, $financedAmount)
 {
-    $cost = $price/(1+($percentage/100));
+    $valueParcel = $financedAmount * (($percentage/100*(1+$percentage/100)**$parcel)/((1+$percentage/100)**$parcel-1));
 
-    return $cost;
+    return round($valueParcel, 2);
 }
 
 if(!empty($_POST['percentage']) && !empty($_POST['parcel']) && !empty($_POST['financedAmount']))
 {
-    
+    $valueParcel = calculatorParcel($_POST['percentage'], $_POST['parcel'], $_POST['financedAmount']);
 }
+
+$_SESSION['result'] = $valueParcel;
+header('location:./index.php');
+die();
 
 ?>

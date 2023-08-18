@@ -13,10 +13,17 @@ session_start();
 </head>
 <body>
     <form method="POST" action="./calculator.php">
+        <label for="financedAmount">Financed Amount: </label>
         <input type="number" name="financedAmount">
+        <label for="percentage">Interest percentage: </label>
         <input type="number" name="percentage">
-        <input type="submit" value="parcel">
+        <label for="parcel">Parcel: </label>
+        <input type="number" name="parcel">
+        <input type="submit" value="calculator">
     </form>
+    <?php
+
+    ?>
 
 </body>
 </html>
