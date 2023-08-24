@@ -5,10 +5,10 @@ class  Rectangle
     private $height;
     private $width;
 
-    public function __construct()
+    public function __construct($height,$width)
     {
-        $this->$height = 1;
-        $this->$width = 1;
+        $this->$height = $height;
+        $this->$width = $width;
     }
 
     public function setHeight($height)
@@ -31,9 +31,20 @@ class  Rectangle
         return $this->height;
     }
 
-    public calculatorPerimeterArea()
+    public function calculatorPerimeter()
     {
-        
+        return 2*($this->width + $this->height);
+    }
+
+    public function calculatorArea()
+    {
+        return $this->width * $this->height;
+    }
+
+    public function isSquare()
+    {
+        if($this->width == $this->height) return "Is Square";
+        else return "Is not Square";
     }
 
 }

@@ -2,7 +2,8 @@
     
     require "./class.php";
 
-    $rectangle = new Rectangle();
+    $rectangle = new Rectangle(1,1);
+
 ?>
 
 
@@ -16,16 +17,20 @@
 <body>
     <form method="post">
         <p>Digite a largura: </p>
-        <input id="width" type="number" name="width">
+        <input type="number" name="width" >
         <p>Digite a altura: </p>
-        <input id="height" type="number" name="heigth">
+        <input type="number" name="heigth">
         <input type="submit">
     </form>
     <?php
-        $rectangle->setWidth($_POST['width']);
-        $rectangle->setHeight($_POST['heigth']);
-        echo "".$rectangle->getWidth();
-        echo "".$rectangle->getHeight();
+        if(isset($_POST['width']) && isset($_POST['heigth']))
+        {
+            $rectangle->setWidth($_POST['width']);
+            $rectangle->setHeight($_POST['heigth']);
+            echo "Area: ".$rectangle->calculatorArea()."</br>";
+            echo "Perimeter: ".$rectangle->calculatorPerimeter()."</br>";
+            echo "Is square or not: ".$rectangle->isSquare();
+        }
     ?>
 </body>
 </html>
