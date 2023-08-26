@@ -46,25 +46,36 @@
 
         public function incrementDay()
         {
-            $this->day += 1;
+            $datetime = new DateTime();
+            $datetime->setDate($this->year,$this->month,$this->day);
+            $this->day = $datetime->modify('+1 day')->format('d');
+            $this->month = $datetime->format('m');
         }
 
         public function decrementDay()
         {
-            $this->day -= 1;
+            $datetime = new DateTime();
+            $datetime->setDate($this->year,$this->month,$this->day);
+            $this->day = $datetime->modify('-1 day')->format('d');
+            $this->month = $datetime->format('m');
         }
 
         public function returnDate()
         {
-            $date = new DateTime("$this->year-$this->month-$this->day");
-            return $date->format('d/m/Y');
+            if ($this->day == 0) return "0/0/0";
+            else
+            {
+                $date = new DateTime("$this->year-$this->month-$this->day");
+                return $date->format('d/m/Y');
+            }
+
         }
 
         public function leapYear()
         {
             $year = $this->year;
-            if(($year % 4 == 0 && $year % 100 != 0) || $year % 400 == 0) "it's leap year";
-            else "it's not a leap year";
+            if(($year % 4 == 0 && $year % 100 != 0) || $year % 400 == 0) return "It's leap year";
+            else return "It's not a leap year";
         }
 
         public function differenceYears($date)
