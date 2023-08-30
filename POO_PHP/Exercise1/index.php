@@ -2,7 +2,7 @@
     
     require "./class.php";
 
-    $rectangle = new Rectangle(1,1);
+    $rectangle = new Rectangle();
 
 ?>
 

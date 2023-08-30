@@ -5,10 +5,10 @@ class  Rectangle
     private $height;
     private $width;
 
-    public function __construct($height,$width)
+    public function __construct()
     {
-        $this->$height = $height;
-        $this->$width = $width;
+        $this->$height = 1;
+        $this->$width = 1;
     }
 
     public function setHeight($height)
