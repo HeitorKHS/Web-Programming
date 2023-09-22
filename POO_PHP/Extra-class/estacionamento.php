@@ -26,10 +26,15 @@ class Estacionamento
 
     public function registraSaida($placa)
     {
-        $key = array_search($placa, $this->vagas,TRUE);
-        echo $key;
-        unset($this->vagas[$key]);
-        
+        foreach($this-> vagas as $index => $carro)
+        {
+            if($carro->placa === $placa)
+            {
+                unset($this->vagas[$index]);
+                return echo "Removido";
+            }
+        }
+        else echo "Não encontrado";
     }
 
 }
