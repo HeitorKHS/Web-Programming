@@ -34,7 +34,7 @@ class Estacionamento
                 return "Removido";
             }
         }
-        else "Não encontrado";
+        return "Não encontrado";
     }
 
 }
