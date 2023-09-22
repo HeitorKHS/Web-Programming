@@ -10,6 +10,6 @@ echo $estacionamento->getVagas()."<br>";
 $carro2 = new Carro("ferrari","ferrari","abc","vermelho");
 $estacionamento->registraEntrada($carro2);
 echo $estacionamento->getVagas()."<br>";
-$estacionamento->registraSaida("abc");
+echo $estacionamento->registraSaida("abc");
 echo $estacionamento->getVagas();
 ?>

@@ -28,13 +28,13 @@ class Estacionamento
     {
         foreach($this-> vagas as $index => $carro)
         {
-            if($carro->placa === $placa)
+            if($carro->getPlaca() === $placa)
             {
                 unset($this->vagas[$index]);
-                return echo "Removido";
+                return "Removido";
             }
         }
-        else echo "Não encontrado";
+        else "Não encontrado";
     }
 
 }
