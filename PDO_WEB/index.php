@@ -19,7 +19,9 @@
 
         echo "<h2>Customers</h2>";
         foreach ($clients as $client) {
-            echo $client['code']." - ".$client['name']." - ".$client['telephone']."<br>";
+            echo $client['code']." - ".$client['name']." - ".$client['telephone'].
+            "<a href='attClient.php?code=".$client['code']."'>[alterar]</a>".
+            "<a href='deleteClient.php?code=".$client['code']."'>[excluir]</a>"."<br>";
         }
 
     ?>

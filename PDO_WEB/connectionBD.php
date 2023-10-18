@@ -45,7 +45,7 @@ class Database
         try
         {
             $access = $this->connection->query($SQLcommand);
-            $access->execute();
+            //$access->execute();
             return true;
         }
         catch (PDOException $message)
