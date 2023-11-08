@@ -15,8 +15,8 @@
                 ?>
                     <li>
                         <?php echo $user['name'] ?> - <?= $user['cpf']?>-
-                        <a href = 'EditeUser.php?id=<?=$user['id']?>'>[alter]</a>
-                        <a href = 'DeleteUser.php?id=<?=$user['id']?>'>[delete]</a>
+                        <a href = 'alterUser.php?id=<?=$user['id']?>'>[alter]</a>
+                        <a href = 'index.php?action=delete&id=<?=$user['id']?>'>[delete]</a>
                     </li>
                 <?php
             }
@@ -25,14 +25,14 @@
     </ul>
 
     <h2>Add new user</h2>
-    <form action="AddUser.php" method="POST">
+    <form action="index.php" method="POST">
         <label for="name">Name: </label>
         <input type="text" name="name" id="name" require>
         <label for="cpf">CPF: </label>
         <input type="text" name="cpf" id="cpf" require>
         <label for="password">Password: </label>
         <input type="text" name="password" id="password" require>
-        <button type="submit">Add User</button>
+        <button type="submit" name="action" value="insert">Add User</button>
     </form>
 </body>
 </html>
